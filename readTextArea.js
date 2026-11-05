@@ -1,40 +1,53 @@
+// Splits the textarea content by commas into an array
 function splitFunction() {
-  let arr = [];
-  let str = document.getElementById("fileInput").value;
-  arr = str.split(",");
-
-  return arr;
-
-}
-
-function calculateInput() {
-    let expr = document.getElementById("fname").value;
-    try {
-        let result = eval(expr);
-        document.getElementById("Message").innerHTML = "Result: " + result;
-    } catch (e) {
-        document.getElementById("Message").innerHTML = "Invalid Expression";
+    let str = document.getElementById("fileInput").value;
+    let arr = str.split(",");
+    
+    // Convert each item in the array to a number
+    for (let i = 0; i < arr.length; i++) {
+        arr[i] = parseFloat(arr[i]);
     }
+    
+    return arr;
 }
 
+// Calculate Average (Mean)
 function calculateAverage() {
     let numbers = splitFunction();
     let sum = 0;
+    
     for (let i = 0; i < numbers.length; i++) {
         sum += numbers[i];
     }
+    
     let average = sum / numbers.length;
     document.getElementById("Message").innerHTML = "Average: " + average;
 }
 
+// Find Maximum Value
 function findMax() {
     let numbers = splitFunction();
-    let max = Math.max(...numbers);
+    let max = numbers[0];
+    
+    for (let i = 1; i < numbers.length; i++) {
+        if (numbers[i] > max) {
+            max = numbers[i];
+        }
+    }
+    
     document.getElementById("Message").innerHTML = "Maximum: " + max;
 }
 
+// Find Minimum Value
 function findMin() {
     let numbers = splitFunction();
-    let min = Math.min(...numbers);
+    let min = numbers[0];
+    
+    for (let i = 1; i < numbers.length; i++) {
+        if (numbers[i] < min) {
+            min = numbers[i];
+        }
+    }
+    
     document.getElementById("Message").innerHTML = "Minimum: " + min;
 }
