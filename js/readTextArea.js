@@ -1,21 +1,28 @@
-// Splits the textarea content by commas into an array
 function splitFunction() {
     let str = document.getElementById("fileInput").value;
-    let arr = str.split(",");
     
-    // Convert each item in the array to a number
-    for (let i = 0; i < arr.length; i++) {
-        arr[i] = parseFloat(arr[i]);
+    let rawArr = str.trim().split(/[\s,]+/);
+    let numbers = [];
+    
+    for (let i = 0; i < rawArr.length; i++) {
+        let num = parseFloat(rawArr[i]);
+        if (!isNaN(num)) {
+            numbers.push(num);
+        }
     }
     
-    return arr;
+    return numbers;
 }
 
 // Calculate Average (Mean)
 function calculateAverage() {
     let numbers = splitFunction();
-    let sum = 0;
+    if (numbers.length === 0) {
+        document.getElementById("Message").innerHTML = "Error: No numbers found in text area.";
+        return;
+    }
     
+    let sum = 0;
     for (let i = 0; i < numbers.length; i++) {
         sum += numbers[i];
     }
@@ -24,11 +31,14 @@ function calculateAverage() {
     document.getElementById("Message").innerHTML = "Average: " + average;
 }
 
-// Find Maximum Value
 function findMax() {
     let numbers = splitFunction();
-    let max = numbers[0];
+    if (numbers.length === 0) {
+        document.getElementById("Message").innerHTML = "Error: No numbers found in text area.";
+        return;
+    }
     
+    let max = numbers[0];
     for (let i = 1; i < numbers.length; i++) {
         if (numbers[i] > max) {
             max = numbers[i];
@@ -38,11 +48,14 @@ function findMax() {
     document.getElementById("Message").innerHTML = "Maximum: " + max;
 }
 
-// Find Minimum Value
 function findMin() {
     let numbers = splitFunction();
-    let min = numbers[0];
+    if (numbers.length === 0) {
+        document.getElementById("Message").innerHTML = "Error: No numbers found in text area.";
+        return;
+    }
     
+    let min = numbers[0];
     for (let i = 1; i < numbers.length; i++) {
         if (numbers[i] < min) {
             min = numbers[i];
