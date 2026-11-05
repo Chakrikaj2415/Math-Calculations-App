@@ -1,6 +1,6 @@
-// let button = document.getElementById("myBtn").addEventListener("click",Solve); 
-// let solve = false; 
-// if(!solve) {
+let button = document.getElementById("calculateAverage()").addEventListener("click",); 
+let solve = false; 
+if(!solve) {
     
-//     solve = false;
-// }
+    solve = false;
+}

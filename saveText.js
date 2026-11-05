@@ -19,11 +19,16 @@ function checkFileProperty() {
 }
 
 function loadFileAsText() {
-    let fileToLoad = document.getElementById("fileToLoad").files[0];
-    let fileReader = new FileReader();
-    fileReader.onload = function(fileLoadedEvent) {
-        let textFromFileLoaded = fileLoadedEvent.target.result;
-        document.getElementById("fileInput").value = textFromFileLoaded;
-    };
-    fileReader.readAsText(fileToLoad, "UTF-8");
+
+  let fileToLoad = document.getElementById("fileToLoad").files[0];
+
+  let fileReader = new FileReader();
+  fileReader.onload = function(fileLoadedEvent) 
+  {
+    let textFromFileLoaded = fileLoadedEvent.target.result;
+    document.getElementById("fileInput").value = textFromFileLoaded; 
+  };
+  
+  fileReader.readAsText(fileToLoad, "UTF-8");
+
 }
