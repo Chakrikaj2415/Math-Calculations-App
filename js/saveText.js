@@ -1,4 +1,3 @@
-// Handles standard expression evaluation from the text input
 function calculateInput() {
     let expr = document.getElementById("fname").value;
     try {
@@ -9,7 +8,6 @@ function calculateInput() {
     }
 }
 
-// Checks if a file is selected before loading
 function checkFileProperty() {
     let x = document.getElementById("fileToLoad");
     let txt = "";
@@ -29,8 +27,10 @@ function checkFileProperty() {
     }
     document.getElementById("Message").innerHTML = txt;
 }
+function toggleBackground() {
+    document.body.classList.toggle("dark-theme");
+}
 
-// Loads the text file contents into the textarea
 function loadFileAsText() {
     let fileToLoad = document.getElementById("fileToLoad").files[0];
 

@@ -4,12 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Math Calculations App</title>
+    <link rel="icon" type="image/jpeg" href="favicon.jpg">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
     <div class="calculator-container">
         <h2>Math Calculations App</h2>
         
-        <!-- Text Input for Math Class / Standard Calculations -->
         <div class="form-group">
             <label for="fname">Enter Problem / Number:</label>
             <input type="text" id="fname" name="fname" placeholder="e.g., 5*5">
@@ -18,7 +19,6 @@
 
         <hr>
 
-        <!-- File Upload Section -->
         <div class="form-group">
             <label for="fileToLoad">Upload Data File:</label>
             <input type="file" id="fileToLoad">
@@ -31,15 +31,17 @@
             <textarea class="textinput" id="fileInput" cols="40" rows="5" placeholder="File contents will load here..."></textarea>
         </div>
         
-        <!-- Statistical Question Buttons -->
         <div class="stat-buttons">
-            <button type="button" onclick="calculateAverage()">Calculate Average</button>
-            <button type="button" onclick="findMax()">Find Maximum</button>
-            <button type="button" onclick="findMin()">Find Minimum</button>
+            <button type="button" onclick="calculateAverage()">Average</button>
+            <button type="button" onclick="calculateMedian()">Median</button>
+            <button type="button" onclick="calculateMode()">Mode</button>
+            <button type="button" onclick="findMax()">Max</button>
+            <button type="button" onclick="findMin()">Min</button>
         </div>
+
+        <button type="button" class="theme-btn" onclick="toggleBackground()" style="background-color: #5f6368; margin-top: 15px;">Dark Mode</button>
     </div>
 
-    <!-- JavaScript Files -->
     <script src="js/saveText.js"></script>
     <script src="js/readTextArea.js"></script>
 </body>

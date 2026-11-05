@@ -1,0 +1,135 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f0f2f5;
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+}
+
+.calculator-container {
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    width: 100%;
+    max-width: 450px;
+}
+
+h2 {
+    text-align: center;
+    color: #1a73e8;
+    margin-bottom: 25px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: 600;
+    font-size: 14px;
+    color: #555;
+}
+
+input[type="text"], 
+input[type="file"], 
+textarea {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 14px;
+    box-sizing: border-box;
+    transition: border-color 0.2s;
+}
+
+input[type="text"]:focus, 
+textarea:focus {
+    border-color: #1a73e8;
+    outline: none;
+}
+
+textarea {
+    resize: vertical;
+    background-color: #fafafa;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    background-color: #1a73e8;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    margin-top: 5px;
+}
+
+button:hover {
+    background-color: #1557b0;
+}
+
+hr {
+    border: none;
+    border-top: 1px solid #eee;
+    margin: 20px 0;
+}
+
+#Message {
+    font-weight: bold;
+    color: #d93025;
+    background-color: #fce8e6;
+    padding: 10px;
+    border-radius: 6px;
+    text-align: center;
+    margin: 15px 0 10px 0;
+    min-height: 20px;
+}
+
+.stat-buttons {
+    display: flex;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.stat-buttons button {
+    background-color: #34a853; 
+}
+
+.stat-buttons button:hover {
+    background-color: #2e8b57;
+}
+
+body.dark-theme {
+    background-color: #121212;
+    color: #e0e0e0;
+}
+
+body.dark-theme .calculator-container {
+    background: #1e1e1e;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+}
+
+body.dark-theme h2 {
+    color: #8ab4f8;
+}
+
+body.dark-theme label {
+    color: #bbb;
+}
+
+body.dark-theme input[type="text"], 
+body.dark-theme input[type="file"], 
+body.dark-theme textarea {
+    background-color: #2d2d2d;
+    border-color: #444;
+    color: #fff;
+}
