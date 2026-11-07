@@ -1,13 +1,3 @@
-function calculateInput() {
-    let expr = document.getElementById("fname").value;
-    try {
-        let result = eval(expr);
-        document.getElementById("Message").innerHTML = "Result: " + result;
-    } catch (e) {
-        document.getElementById("Message").innerHTML = "Invalid Expression";
-    }
-}
-
 function checkFileProperty() {
     let x = document.getElementById("fileToLoad");
     let txt = "";
@@ -27,20 +17,13 @@ function checkFileProperty() {
     }
     document.getElementById("Message").innerHTML = txt;
 }
-function toggleBackground() {
-    document.body.classList.toggle("dark-theme");
-}
 
 function loadFileAsText() {
     let fileToLoad = document.getElementById("fileToLoad").files[0];
-
-    if (!fileToLoad) return;
-
     let fileReader = new FileReader();
     fileReader.onload = function(fileLoadedEvent) {
         let textFromFileLoaded = fileLoadedEvent.target.result;
-        document.getElementById("fileInput").value = textFromFileLoaded; 
+        document.getElementById("fileInput").value = textFromFileLoaded;
     };
-    
     fileReader.readAsText(fileToLoad, "UTF-8");
 }

@@ -27,10 +27,20 @@
 
         <!-- Output and Text Area -->
         <div class="output-group">
-            <p id="Message"></p>
             <textarea class="textinput" id="fileInput" cols="40" rows="5" placeholder="File contents will load here..."></textarea>
+            <p id="Message"></p>
         </div>
         
+        <!-- Math Class Buttons -->
+        <h3>Math Class Calculations</h3>
+        <div class="math-buttons">
+            <button type="button" onclick="calculateRound()">Round (.round)</button>
+            <button type="button" onclick="calculatePower()">Power (.pow)</button>
+            <button type="button" onclick="calculatePiMultiply()">Multiply by PI</button>
+        </div>
+
+        <!-- Statistical Buttons -->
+        <h3>Statistical Calculations</h3>
         <div class="stat-buttons">
             <button type="button" onclick="calculateAverage()">Average</button>
             <button type="button" onclick="calculateMedian()">Median</button>
